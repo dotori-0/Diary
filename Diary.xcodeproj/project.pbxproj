@@ -13,6 +13,10 @@
 		0A1E731E28B4A5C800EAEE7F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A1E731C28B4A5C800EAEE7F /* Main.storyboard */; };
 		0A1E732028B4A5CA00EAEE7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A1E731F28B4A5CA00EAEE7F /* Assets.xcassets */; };
 		0A1E732328B4A5CA00EAEE7F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A1E732128B4A5CA00EAEE7F /* LaunchScreen.storyboard */; };
+		0A1E732E28B4ADFC00EAEE7F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1E732D28B4ADFC00EAEE7F /* BaseViewController.swift */; };
+		0A1E733028B4AE8E00EAEE7F /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1E732F28B4AE8E00EAEE7F /* BaseView.swift */; };
+		0A1E733328B5296500EAEE7F /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1E733228B5296500EAEE7F /* BaseCollectionViewCell.swift */; };
+		0A1E733528B529E100EAEE7F /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1E733428B529E100EAEE7F /* BaseTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		0A1E731F28B4A5CA00EAEE7F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0A1E732228B4A5CA00EAEE7F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0A1E732428B4A5CA00EAEE7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0A1E732D28B4ADFC00EAEE7F /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		0A1E732F28B4AE8E00EAEE7F /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		0A1E733228B5296500EAEE7F /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
+		0A1E733428B529E100EAEE7F /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +64,9 @@
 		0A1E731528B4A5C800EAEE7F /* Diary */ = {
 			isa = PBXGroup;
 			children = (
+				0A1E732C28B4AC6800EAEE7F /* Realm */,
+				0A1E732A28B4AC5200EAEE7F /* Utility */,
+				0A1E732B28B4AC5A00EAEE7F /* Scenes */,
 				0A1E731628B4A5C800EAEE7F /* AppDelegate.swift */,
 				0A1E731828B4A5C800EAEE7F /* SceneDelegate.swift */,
 				0A1E731A28B4A5C800EAEE7F /* ViewController.swift */,
@@ -65,6 +76,39 @@
 				0A1E732428B4A5CA00EAEE7F /* Info.plist */,
 			);
 			path = Diary;
+			sourceTree = "<group>";
+		};
+		0A1E732A28B4AC5200EAEE7F /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				0A1E733128B5294900EAEE7F /* Base */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		0A1E732B28B4AC5A00EAEE7F /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		0A1E732C28B4AC6800EAEE7F /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
+		0A1E733128B5294900EAEE7F /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				0A1E732D28B4ADFC00EAEE7F /* BaseViewController.swift */,
+				0A1E732F28B4AE8E00EAEE7F /* BaseView.swift */,
+				0A1E733228B5296500EAEE7F /* BaseCollectionViewCell.swift */,
+				0A1E733428B529E100EAEE7F /* BaseTableViewCell.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,8 +183,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A1E731B28B4A5C800EAEE7F /* ViewController.swift in Sources */,
+				0A1E732E28B4ADFC00EAEE7F /* BaseViewController.swift in Sources */,
+				0A1E733028B4AE8E00EAEE7F /* BaseView.swift in Sources */,
 				0A1E731728B4A5C800EAEE7F /* AppDelegate.swift in Sources */,
+				0A1E733528B529E100EAEE7F /* BaseTableViewCell.swift in Sources */,
 				0A1E731928B4A5C800EAEE7F /* SceneDelegate.swift in Sources */,
+				0A1E733328B5296500EAEE7F /* BaseCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
