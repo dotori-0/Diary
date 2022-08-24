@@ -34,6 +34,10 @@ class HomeViewController: BaseViewController {
         let sortButton = UIBarButtonItem(image: UIImage(systemName: "arrow.up.arrow.down"), style: .plain, target: self, action: #selector(sortButtonClicked))
         let filterButton = UIBarButtonItem(image: UIImage(systemName: "line.3.horizontal.decrease"), style: .plain, target: self, action: #selector(filterButtonClicked))
         navigationItem.leftBarButtonItems = [sortButton, filterButton]
+        
+        let appearance = UINavigationBarAppearance()
+        appearance.backgroundColor = .systemBackground
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
     }
     
     override func setConstraints() {
