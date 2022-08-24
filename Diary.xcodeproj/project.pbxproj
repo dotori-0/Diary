@@ -22,24 +22,25 @@
 		0A1E734128B52B9A00EAEE7F /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0A1E734028B52B9A00EAEE7F /* SnapKit */; };
 		0A1E734328B52BD200EAEE7F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1E734228B52BD200EAEE7F /* HomeViewController.swift */; };
 		0A1E734528B52BE400EAEE7F /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1E734428B52BE400EAEE7F /* HomeTableViewCell.swift */; };
-		0A1E735028B52C4200EAEE7F /* HelpersFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A1E734C28B52C3300EAEE7F /* HelpersFramework.framework */; };
-		0A1E735128B52C4200EAEE7F /* HelpersFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0A1E734C28B52C3300EAEE7F /* HelpersFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0A1E735528B52CDD00EAEE7F /* DiaryImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1E735428B52CDD00EAEE7F /* DiaryImageView.swift */; };
 		0A1E735A28B64E9300EAEE7F /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1E735928B64E9300EAEE7F /* Color.swift */; };
 		0A1E735C28B64F5D00EAEE7F /* FontSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1E735B28B64F5D00EAEE7F /* FontSize.swift */; };
+		0A1E736D28B65AE000EAEE7F /* HelpersFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A1E736A28B65AD800EAEE7F /* HelpersFramework.framework */; };
+		0A1E736E28B65AE000EAEE7F /* HelpersFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0A1E736A28B65AD800EAEE7F /* HelpersFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0A1E737728B65BE400EAEE7F /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1E737628B65BE400EAEE7F /* ReusableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		0A1E734B28B52C3300EAEE7F /* PBXContainerItemProxy */ = {
+		0A1E736928B65AD800EAEE7F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 0A1E734628B52C3300EAEE7F /* HelpersFramework.xcodeproj */;
+			containerPortal = 0A1E736428B65AD800EAEE7F /* HelpersFramework.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 0A0162A628ABC50B0069C4AF;
 			remoteInfo = HelpersFramework;
 		};
-		0A1E734D28B52C3300EAEE7F /* PBXContainerItemProxy */ = {
+		0A1E736B28B65AD800EAEE7F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 0A1E734628B52C3300EAEE7F /* HelpersFramework.xcodeproj */;
+			containerPortal = 0A1E736428B65AD800EAEE7F /* HelpersFramework.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 0A0162B028ABC50B0069C4AF;
 			remoteInfo = HelpersFrameworkTests;
@@ -47,13 +48,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		0A1E735228B52C4200EAEE7F /* Embed Frameworks */ = {
+		0A1E736F28B65AE000EAEE7F /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				0A1E735128B52C4200EAEE7F /* HelpersFramework.framework in Embed Frameworks */,
+				0A1E736E28B65AE000EAEE7F /* HelpersFramework.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -75,10 +76,11 @@
 		0A1E733428B529E100EAEE7F /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		0A1E734228B52BD200EAEE7F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		0A1E734428B52BE400EAEE7F /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
-		0A1E734628B52C3300EAEE7F /* HelpersFramework.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = HelpersFramework.xcodeproj; path = ../HelpersFramework/HelpersFramework.xcodeproj; sourceTree = "<group>"; };
 		0A1E735428B52CDD00EAEE7F /* DiaryImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryImageView.swift; sourceTree = "<group>"; };
 		0A1E735928B64E9300EAEE7F /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		0A1E735B28B64F5D00EAEE7F /* FontSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontSize.swift; sourceTree = "<group>"; };
+		0A1E736428B65AD800EAEE7F /* HelpersFramework.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = HelpersFramework.xcodeproj; path = ../HelpersFramework/HelpersFramework.xcodeproj; sourceTree = "<group>"; };
+		0A1E737628B65BE400EAEE7F /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,7 +91,7 @@
 				0A1E734128B52B9A00EAEE7F /* SnapKit in Frameworks */,
 				0A1E733E28B52B3D00EAEE7F /* RealmSwift in Frameworks */,
 				0A1E733C28B52B3D00EAEE7F /* Realm in Frameworks */,
-				0A1E735028B52C4200EAEE7F /* HelpersFramework.framework in Frameworks */,
+				0A1E736D28B65AE000EAEE7F /* HelpersFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,7 +101,7 @@
 		0A1E730A28B4A5C800EAEE7F = {
 			isa = PBXGroup;
 			children = (
-				0A1E734628B52C3300EAEE7F /* HelpersFramework.xcodeproj */,
+				0A1E736428B65AD800EAEE7F /* HelpersFramework.xcodeproj */,
 				0A1E731528B4A5C800EAEE7F /* Diary */,
 				0A1E731428B4A5C800EAEE7F /* Products */,
 				0A1E734F28B52C4200EAEE7F /* Frameworks */,
@@ -117,6 +119,7 @@
 		0A1E731528B4A5C800EAEE7F /* Diary */ = {
 			isa = PBXGroup;
 			children = (
+				0A1E737328B65BCC00EAEE7F /* Protocols */,
 				0A1E732C28B4AC6800EAEE7F /* Realm */,
 				0A1E732A28B4AC5200EAEE7F /* Utility */,
 				0A1E732B28B4AC5A00EAEE7F /* Scenes */,
@@ -192,15 +195,6 @@
 			path = SearchImage;
 			sourceTree = "<group>";
 		};
-		0A1E734728B52C3300EAEE7F /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				0A1E734C28B52C3300EAEE7F /* HelpersFramework.framework */,
-				0A1E734E28B52C3300EAEE7F /* HelpersFrameworkTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		0A1E734F28B52C4200EAEE7F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -225,6 +219,23 @@
 			path = Constants;
 			sourceTree = "<group>";
 		};
+		0A1E736528B65AD800EAEE7F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0A1E736A28B65AD800EAEE7F /* HelpersFramework.framework */,
+				0A1E736C28B65AD800EAEE7F /* HelpersFrameworkTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0A1E737328B65BCC00EAEE7F /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				0A1E737628B65BE400EAEE7F /* ReusableView.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -235,7 +246,7 @@
 				0A1E730F28B4A5C800EAEE7F /* Sources */,
 				0A1E731028B4A5C800EAEE7F /* Frameworks */,
 				0A1E731128B4A5C800EAEE7F /* Resources */,
-				0A1E735228B52C4200EAEE7F /* Embed Frameworks */,
+				0A1E736F28B65AE000EAEE7F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -283,8 +294,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 0A1E734728B52C3300EAEE7F /* Products */;
-					ProjectRef = 0A1E734628B52C3300EAEE7F /* HelpersFramework.xcodeproj */;
+					ProductGroup = 0A1E736528B65AD800EAEE7F /* Products */;
+					ProjectRef = 0A1E736428B65AD800EAEE7F /* HelpersFramework.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -295,18 +306,18 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		0A1E734C28B52C3300EAEE7F /* HelpersFramework.framework */ = {
+		0A1E736A28B65AD800EAEE7F /* HelpersFramework.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = HelpersFramework.framework;
-			remoteRef = 0A1E734B28B52C3300EAEE7F /* PBXContainerItemProxy */;
+			remoteRef = 0A1E736928B65AD800EAEE7F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		0A1E734E28B52C3300EAEE7F /* HelpersFrameworkTests.xctest */ = {
+		0A1E736C28B65AD800EAEE7F /* HelpersFrameworkTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = HelpersFrameworkTests.xctest;
-			remoteRef = 0A1E734D28B52C3300EAEE7F /* PBXContainerItemProxy */;
+			remoteRef = 0A1E736B28B65AD800EAEE7F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -336,6 +347,7 @@
 				0A1E733028B4AE8E00EAEE7F /* BaseView.swift in Sources */,
 				0A1E734328B52BD200EAEE7F /* HomeViewController.swift in Sources */,
 				0A1E731728B4A5C800EAEE7F /* AppDelegate.swift in Sources */,
+				0A1E737728B65BE400EAEE7F /* ReusableView.swift in Sources */,
 				0A1E735C28B64F5D00EAEE7F /* FontSize.swift in Sources */,
 				0A1E733528B529E100EAEE7F /* BaseTableViewCell.swift in Sources */,
 				0A1E734528B52BE400EAEE7F /* HomeTableViewCell.swift in Sources */,

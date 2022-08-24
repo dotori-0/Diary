@@ -10,7 +10,7 @@ import UIKit
 import RealmSwift
 
 
-class HomeViewController: UIViewController {
+class HomeViewController: BaseViewController {
     
     lazy var tableView: UITableView = {
        let view = UITableView()
@@ -24,11 +24,36 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+    }
+    
+    override func setUI() {
         view.addSubview(tableView)
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonClicked))
+        let sortButton = UIBarButtonItem(image: UIImage(systemName: "arrow.up.arrow.down"), style: .plain, target: self, action: #selector(sortButtonClicked))
+        let filterButton = UIBarButtonItem(image: UIImage(systemName: "line.3.horizontal.decrease"), style: .plain, target: self, action: #selector(filterButtonClicked))
+        navigationItem.leftBarButtonItems = [sortButton, filterButton]
+    }
+    
+    override func setConstraints() {
         tableView.snp.makeConstraints { make in
             make.edges.equalTo(view.safeAreaLayoutGuide)
         }
     }
+    
+    @objc func addButtonClicked() {
+        
+    }
+    
+    @objc func sortButtonClicked() {
+        
+    }
+    
+    @objc func filterButtonClicked() {
+        
+    }
+    
 }
 
 
@@ -47,6 +72,4 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         
         return cell
     }
-    
-    
 }

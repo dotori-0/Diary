@@ -12,11 +12,14 @@ class BaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setUI()
+        setConstraints()
         setTargets()
     }
     
-
-    func setTargets() {
-        
-    }
+    func setUI() { }
+    
+    func setConstraints() { }
+    
+    func setTargets() { }
 }
