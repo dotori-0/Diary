@@ -10,6 +10,8 @@ import UIKit
 class DiaryImageView: UIImageView {
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
+        setupView()
     }
     
     required init?(coder: NSCoder) {
