@@ -7,7 +7,7 @@
 
 import UIKit
 
-class WriteViewController: UIViewController {
+class WriteViewController: BaseViewController {
     
     let writeView = WriteView()
     
@@ -21,15 +21,16 @@ class WriteViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func setUI() {
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .stop, target: self, action: #selector(closeButtonClicked))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "저장", style: .plain, target: self, action: #selector(saveButtonClicked))
     }
-    */
 
+    @objc func closeButtonClicked() {
+        dismiss(animated: true)
+    }
+    
+    @objc func saveButtonClicked() {
+        dismiss(animated: true)
+    }
 }
