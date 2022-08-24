@@ -28,6 +28,10 @@
 		0A1E736D28B65AE000EAEE7F /* HelpersFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A1E736A28B65AD800EAEE7F /* HelpersFramework.framework */; };
 		0A1E736E28B65AE000EAEE7F /* HelpersFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0A1E736A28B65AD800EAEE7F /* HelpersFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0A1E737728B65BE400EAEE7F /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1E737628B65BE400EAEE7F /* ReusableView.swift */; };
+		0A1E737A28B6653C00EAEE7F /* Transition+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1E737928B6653C00EAEE7F /* Transition+Extension.swift */; };
+		0A1E737C28B6665100EAEE7F /* WriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1E737B28B6665100EAEE7F /* WriteView.swift */; };
+		0A1E737E28B6666100EAEE7F /* WriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1E737D28B6666100EAEE7F /* WriteViewController.swift */; };
+		0A1E738028B6711B00EAEE7F /* RoundedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1E737F28B6711B00EAEE7F /* RoundedTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +85,10 @@
 		0A1E735B28B64F5D00EAEE7F /* FontSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontSize.swift; sourceTree = "<group>"; };
 		0A1E736428B65AD800EAEE7F /* HelpersFramework.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = HelpersFramework.xcodeproj; path = ../HelpersFramework/HelpersFramework.xcodeproj; sourceTree = "<group>"; };
 		0A1E737628B65BE400EAEE7F /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
+		0A1E737928B6653C00EAEE7F /* Transition+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transition+Extension.swift"; sourceTree = "<group>"; };
+		0A1E737B28B6665100EAEE7F /* WriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteView.swift; sourceTree = "<group>"; };
+		0A1E737D28B6666100EAEE7F /* WriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteViewController.swift; sourceTree = "<group>"; };
+		0A1E737F28B6711B00EAEE7F /* RoundedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +131,7 @@
 				0A1E732C28B4AC6800EAEE7F /* Realm */,
 				0A1E732A28B4AC5200EAEE7F /* Utility */,
 				0A1E732B28B4AC5A00EAEE7F /* Scenes */,
+				0A1E737828B6652F00EAEE7F /* Extensions */,
 				0A1E731628B4A5C800EAEE7F /* AppDelegate.swift */,
 				0A1E731828B4A5C800EAEE7F /* SceneDelegate.swift */,
 				0A1E731A28B4A5C800EAEE7F /* ViewController.swift */,
@@ -184,6 +193,8 @@
 		0A1E733828B52A7D00EAEE7F /* Write */ = {
 			isa = PBXGroup;
 			children = (
+				0A1E737B28B6665100EAEE7F /* WriteView.swift */,
+				0A1E737D28B6666100EAEE7F /* WriteViewController.swift */,
 			);
 			path = Write;
 			sourceTree = "<group>";
@@ -206,6 +217,7 @@
 			isa = PBXGroup;
 			children = (
 				0A1E735428B52CDD00EAEE7F /* DiaryImageView.swift */,
+				0A1E737F28B6711B00EAEE7F /* RoundedTextField.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -234,6 +246,14 @@
 				0A1E737628B65BE400EAEE7F /* ReusableView.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		0A1E737828B6652F00EAEE7F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0A1E737928B6653C00EAEE7F /* Transition+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -341,17 +361,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A1E731B28B4A5C800EAEE7F /* ViewController.swift in Sources */,
+				0A1E738028B6711B00EAEE7F /* RoundedTextField.swift in Sources */,
 				0A1E732E28B4ADFC00EAEE7F /* BaseViewController.swift in Sources */,
+				0A1E737C28B6665100EAEE7F /* WriteView.swift in Sources */,
 				0A1E735A28B64E9300EAEE7F /* Color.swift in Sources */,
 				0A1E735528B52CDD00EAEE7F /* DiaryImageView.swift in Sources */,
 				0A1E733028B4AE8E00EAEE7F /* BaseView.swift in Sources */,
 				0A1E734328B52BD200EAEE7F /* HomeViewController.swift in Sources */,
 				0A1E731728B4A5C800EAEE7F /* AppDelegate.swift in Sources */,
 				0A1E737728B65BE400EAEE7F /* ReusableView.swift in Sources */,
+				0A1E737A28B6653C00EAEE7F /* Transition+Extension.swift in Sources */,
 				0A1E735C28B64F5D00EAEE7F /* FontSize.swift in Sources */,
 				0A1E733528B529E100EAEE7F /* BaseTableViewCell.swift in Sources */,
 				0A1E734528B52BE400EAEE7F /* HomeTableViewCell.swift in Sources */,
 				0A1E731928B4A5C800EAEE7F /* SceneDelegate.swift in Sources */,
+				0A1E737E28B6666100EAEE7F /* WriteViewController.swift in Sources */,
 				0A1E733328B5296500EAEE7F /* BaseCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

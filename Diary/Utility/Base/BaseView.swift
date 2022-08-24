@@ -21,7 +21,13 @@ class BaseView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setUI() { }
+    func setUI() {
+//        self.backgroundColor = Constants.Color.backgroundColor
+//        self.layer.backgroundColor = Constants.Color.backgroundColor.cgColor
+//        backgroundColor = .systemBackground
+        layer.backgroundColor = UIColor.systemBackground.cgColor
+        
+    }
     
     func setConstraints() { }
 }

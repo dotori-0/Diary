@@ -47,7 +47,8 @@ class HomeViewController: BaseViewController {
     }
     
     @objc func addButtonClicked() {
-        
+        let vc = WriteViewController()
+        transition(vc, transitionStyle: .presentFullScreenNavigation)
     }
     
     @objc func sortButtonClicked() {
