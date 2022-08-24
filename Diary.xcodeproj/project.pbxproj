@@ -24,6 +24,9 @@
 		0A1E734528B52BE400EAEE7F /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1E734428B52BE400EAEE7F /* HomeTableViewCell.swift */; };
 		0A1E735028B52C4200EAEE7F /* HelpersFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A1E734C28B52C3300EAEE7F /* HelpersFramework.framework */; };
 		0A1E735128B52C4200EAEE7F /* HelpersFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0A1E734C28B52C3300EAEE7F /* HelpersFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0A1E735528B52CDD00EAEE7F /* DiaryImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1E735428B52CDD00EAEE7F /* DiaryImageView.swift */; };
+		0A1E735A28B64E9300EAEE7F /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1E735928B64E9300EAEE7F /* Color.swift */; };
+		0A1E735C28B64F5D00EAEE7F /* FontSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1E735B28B64F5D00EAEE7F /* FontSize.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +76,9 @@
 		0A1E734228B52BD200EAEE7F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		0A1E734428B52BE400EAEE7F /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		0A1E734628B52C3300EAEE7F /* HelpersFramework.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = HelpersFramework.xcodeproj; path = ../HelpersFramework/HelpersFramework.xcodeproj; sourceTree = "<group>"; };
+		0A1E735428B52CDD00EAEE7F /* DiaryImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryImageView.swift; sourceTree = "<group>"; };
+		0A1E735928B64E9300EAEE7F /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		0A1E735B28B64F5D00EAEE7F /* FontSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontSize.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +134,8 @@
 		0A1E732A28B4AC5200EAEE7F /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				0A1E735828B64E5100EAEE7F /* Constants */,
+				0A1E735328B52CD300EAEE7F /* CustomViews */,
 				0A1E733128B5294900EAEE7F /* Base */,
 			);
 			path = Utility;
@@ -198,6 +206,23 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0A1E735328B52CD300EAEE7F /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				0A1E735428B52CDD00EAEE7F /* DiaryImageView.swift */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		0A1E735828B64E5100EAEE7F /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				0A1E735928B64E9300EAEE7F /* Color.swift */,
+				0A1E735B28B64F5D00EAEE7F /* FontSize.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -306,9 +331,12 @@
 			files = (
 				0A1E731B28B4A5C800EAEE7F /* ViewController.swift in Sources */,
 				0A1E732E28B4ADFC00EAEE7F /* BaseViewController.swift in Sources */,
+				0A1E735A28B64E9300EAEE7F /* Color.swift in Sources */,
+				0A1E735528B52CDD00EAEE7F /* DiaryImageView.swift in Sources */,
 				0A1E733028B4AE8E00EAEE7F /* BaseView.swift in Sources */,
 				0A1E734328B52BD200EAEE7F /* HomeViewController.swift in Sources */,
 				0A1E731728B4A5C800EAEE7F /* AppDelegate.swift in Sources */,
+				0A1E735C28B64F5D00EAEE7F /* FontSize.swift in Sources */,
 				0A1E733528B529E100EAEE7F /* BaseTableViewCell.swift in Sources */,
 				0A1E734528B52BE400EAEE7F /* HomeTableViewCell.swift in Sources */,
 				0A1E731928B4A5C800EAEE7F /* SceneDelegate.swift in Sources */,
@@ -459,6 +487,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JZ9V99JF7T;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Diary/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -486,6 +515,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JZ9V99JF7T;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Diary/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
