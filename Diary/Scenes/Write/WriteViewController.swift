@@ -5,6 +5,7 @@
 //  Created by SC on 2022/08/24.
 //
 
+import PhotosUI
 import UIKit
 
 import RealmSwift
@@ -40,15 +41,15 @@ class WriteViewController: BaseViewController {
     
     func configureAddPhotoButton() {
         let selectPhoto = UIAction(title: "사진 선택", image: UIImage(systemName: "photo.on.rectangle")) { _ in
-            
+            self.selectPhotoClicked()
         }
         
         let takePhoto = UIAction(title: "사진 찍기", image: UIImage(systemName: "camera")) { _ in
-            
+            self.takePhotoClicked()
         }
         
         let searchImage = UIAction(title: "사진 검색", image: UIImage(systemName: "magnifyingglass")) { _ in
-            
+            self.searchImageClicked()
         }
         
         let menu = UIMenu(title: "",
@@ -57,6 +58,29 @@ class WriteViewController: BaseViewController {
         
         writeView.addPhotoButton.menu = menu
         writeView.addPhotoButton.showsMenuAsPrimaryAction = true
+    }
+    
+    
+    func selectPhotoClicked() {
+        var configuration = PHPickerConfiguration()
+//        var configuration = PHPickerConfiguration(photoLibrary: .shared())
+//        configuration.selectionLimit = 1 // 기본값 1
+        configuration.filter = .any(of: [.images, .livePhotos])
+        
+        let picker = PHPickerViewController(configuration: configuration)
+        picker.delegate = self
+        
+        present(picker, animated: true)
+    }
+    
+    
+    func takePhotoClicked() {
+        
+    }
+    
+    
+    func searchImageClicked() {
+        
     }
 
     
@@ -85,5 +109,13 @@ class WriteViewController: BaseViewController {
         print(Date.now.formatted())
         
         dismiss(animated: true)
+    }
+}
+
+
+extension WriteViewController: PHPickerViewControllerDelegate {
+    func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
+        let result = results.first
+        
     }
 }
