@@ -13,6 +13,18 @@ class WriteView: BaseView {
         return view
     }()
     
+    let addPhotoButton: UIButton = {
+        let button = UIButton()
+        
+        var configuration = UIButton.Configuration.filled()
+        configuration.cornerStyle = .capsule
+        configuration.image = UIImage(systemName: "photo")
+        configuration.baseBackgroundColor = .systemPink
+        button.configuration = configuration
+        
+        return button
+    }()
+    
     let titleTextField: RoundedTextField = {
         let view = RoundedTextField()
         view.placeholder = "제목을 입력해 주세요"
@@ -48,7 +60,7 @@ class WriteView: BaseView {
     }
     
     override func setUI() {
-        [imageView, titleTextField, dateTextField, contentsTextView].forEach {
+        [imageView, addPhotoButton, titleTextField, dateTextField, contentsTextView].forEach {
             addSubview($0)
         }
         self.addSubview(testLabel)
@@ -59,9 +71,15 @@ class WriteView: BaseView {
         
         imageView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.width.equalToSuperview().multipliedBy(0.9)
-            make.height.equalTo(imageView.snp.width)
+            make.width.equalToSuperview().multipliedBy(0.85)
+            make.height.equalTo(imageView.snp.width).multipliedBy(0.9)
             make.top.equalTo(safeAreaLayoutGuide).offset(spacing)
+        }
+        
+        addPhotoButton.snp.makeConstraints { make in
+            make.height.equalTo(imageView.snp.height).multipliedBy(0.2)
+            make.width.equalTo(addPhotoButton.snp.height)
+            make.trailingMargin.bottom.equalTo(imageView).inset(16)
         }
         
         titleTextField.snp.makeConstraints { make in
