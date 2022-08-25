@@ -21,6 +21,8 @@ class UserDiary: Object {
     // Realm에서 권장하는 것은 UUID, ObjectID
     // UUID: 16 바이트, ObjectId: 12 바이트
     // UUID: 애플에서 앱을 구분해 줄 수 있는 용어로도 있지만 여기서도 그것과 같게 사용이 되는 것은 아니다
+    @Persisted(primaryKey: true) var objectId: ObjectId
+    
     // convenience init: 굳이 초기화를 할 필요가 없는 항목들은 빼고 초기화하는 것이 가능
     convenience init(title: String, entryDate: Date, contents: String?, photoURL: String?) {
         self.init()

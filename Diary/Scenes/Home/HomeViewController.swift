@@ -69,7 +69,7 @@ class HomeViewController: BaseViewController {
     
     
     func fetchRealm() {
-        tasks = localRealm.objects(UserDiary.self)
+        tasks = localRealm.objects(UserDiary.self).sorted(byKeyPath: "entryDate", ascending: false)
 //        tasks = localRealm.objects(UserDiary)
     }
     

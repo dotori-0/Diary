@@ -25,7 +25,7 @@ class WriteViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        print("Realm is located at:", localRealm.configuration.fileURL!)
     }
     
     
@@ -90,23 +90,30 @@ class WriteViewController: BaseViewController {
     
     
     @objc func saveButtonClicked() {
-        var title = writeView.titleTextField.text!      // 👻 빈 문자 확인하기
+        var title = writeView.titleTextField.text!
         title = title.trimmingCharacters(in: .whitespaces)  // ❔ whitespacesAndNewlines 안 해도 되는 이유? 리턴키를 눌러도 반영되지 않는 이유?
         guard !title.isEmpty else {
             showAlertMessage(title: "제목을 입력해 주세요")
             return
         }
-//        let entryDate = writeView.dateTextField.text  // 👻 데이트피커 띄우기
+//        let entryDate = writeView.dateTextField.text  // 👻 데이트 픽커 띄우기
         let contents = writeView.contentsTextView.text
 //        let photoURL =
         
         let task = UserDiary(title: title, entryDate: .now, contents: contents, photoURL: nil)
+        // 👻 do-catch 문 적용하기
         try! localRealm.write {
             localRealm.add(task)
         }
         print(Date())
         print(Date.now)
         print(Date.now.formatted())
+        
+        if let image = writeView.imageView.image {
+            let fileName = "\(task.objectId).jpg"
+            
+            saveImageToDocuments(fileName: fileName, image: image)
+        }
         
         dismiss(animated: true)
     }
