@@ -87,6 +87,7 @@ class HomeTableViewCell: BaseTableViewCell {
     }
     
     func showData(entry: UserDiary) {
+//        diaryImageView.image = loadimage  // 👻 함수 사용 불가
         titleLabel.text = entry.title
         dateLabel.text = entry.entryDate.formatted()
         contentsLabel.text = entry.contents

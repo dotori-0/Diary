@@ -124,6 +124,7 @@ extension WriteViewController: PHPickerViewControllerDelegate {
     func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
         guard let result = results.first else {
             showAlertMessage(title: "이미지 선택에 실패하였습니다.")
+            // 👻 Attempt to present <UIAlertController: 0x14184e400> on <UINavigationController: 0x143025c00> (from <Diary.WriteViewController: 0x13fd07660>) which is already presenting <PHPickerViewController: 0x13d8566e0>.
             return
         }
         

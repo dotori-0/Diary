@@ -70,7 +70,6 @@ class HomeViewController: BaseViewController {
     
     func fetchRealm() {
         tasks = localRealm.objects(UserDiary.self).sorted(byKeyPath: "entryDate", ascending: false)
-//        tasks = localRealm.objects(UserDiary)
     }
     
     
@@ -107,6 +106,8 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         
         cell.showData(entry: tasks[indexPath.row])
         
+        let fileName = "\(tasks[indexPath.row].objectId).jpg"
+        cell.diaryImageView.image = loadImageFromDocuments(fileName: fileName)  // 👻 셀 파일로 작업 옮기기
         
         return cell
     }
