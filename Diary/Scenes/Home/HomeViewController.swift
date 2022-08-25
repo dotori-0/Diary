@@ -38,6 +38,7 @@ class HomeViewController: BaseViewController {
         let appearance = UINavigationBarAppearance()
         appearance.backgroundColor = .systemBackground
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
+        navigationController?.navigationBar.standardAppearance = appearance
     }
     
     override func setConstraints() {
