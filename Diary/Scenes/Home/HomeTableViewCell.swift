@@ -88,7 +88,7 @@ class HomeTableViewCell: BaseTableViewCell {
     
     func showData(entry: UserDiary) {
         titleLabel.text = entry.title
-        dateLabel.text = "\(entry.entryDate)"
+        dateLabel.text = entry.entryDate.formatted()
         contentsLabel.text = entry.contents
     }
 }

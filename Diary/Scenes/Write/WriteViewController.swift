@@ -66,7 +66,12 @@ class WriteViewController: BaseViewController {
     
     
     @objc func saveButtonClicked() {
-        let title = writeView.titleTextField.text!      // 👻 빈 문자 확인하기
+        var title = writeView.titleTextField.text!      // 👻 빈 문자 확인하기
+        title = title.trimmingCharacters(in: .whitespaces)  // ❔ whitespacesAndNewlines 안 해도 되는 이유? 리턴키를 눌러도 반영되지 않는 이유?
+        guard !title.isEmpty else {
+            showAlertMessage(title: "제목을 입력해 주세요")
+            return
+        }
 //        let entryDate = writeView.dateTextField.text  // 👻 데이트피커 띄우기
         let contents = writeView.contentsTextView.text
 //        let photoURL =
@@ -75,7 +80,9 @@ class WriteViewController: BaseViewController {
         try! localRealm.write {
             localRealm.add(task)
         }
-        print(task)
+        print(Date())
+        print(Date.now)
+        print(Date.now.formatted())
         
         dismiss(animated: true)
     }
