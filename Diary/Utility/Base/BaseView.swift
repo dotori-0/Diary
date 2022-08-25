@@ -25,7 +25,9 @@ class BaseView: UIView {
 //        self.backgroundColor = Constants.Color.backgroundColor
 //        self.layer.backgroundColor = Constants.Color.backgroundColor.cgColor
 //        backgroundColor = .systemBackground
-        layer.backgroundColor = UIColor.systemBackground.cgColor
+//        backgroundColor = .systemMint
+//        layer.backgroundColor = UIColor.systemBackground.cgColor
+        layer.backgroundColor = UIColor.systemMint.cgColor  // 동작 X
         
     }
     

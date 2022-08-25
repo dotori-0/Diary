@@ -22,6 +22,8 @@ class WriteViewController: BaseViewController {
     }
     
     override func setUI() {
+        writeView.backgroundColor = Constants.Color.backgroundColor
+        
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .stop, target: self, action: #selector(closeButtonClicked))
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "저장", style: .plain, target: self, action: #selector(saveButtonClicked))
     }
