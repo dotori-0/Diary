@@ -33,6 +33,7 @@
 		0A1E737E28B6666100EAEE7F /* WriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1E737D28B6666100EAEE7F /* WriteViewController.swift */; };
 		0A1E738028B6711B00EAEE7F /* RoundedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1E737F28B6711B00EAEE7F /* RoundedTextField.swift */; };
 		0A1E738D28B7650200EAEE7F /* UserDiary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1E738C28B7650200EAEE7F /* UserDiary.swift */; };
+		0A1E739228B76BA400EAEE7F /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0A1E739128B76BA400EAEE7F /* IQKeyboardManagerSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A1E739228B76BA400EAEE7F /* IQKeyboardManagerSwift in Frameworks */,
 				0A1E734128B52B9A00EAEE7F /* SnapKit in Frameworks */,
 				0A1E733E28B52B3D00EAEE7F /* RealmSwift in Frameworks */,
 				0A1E733C28B52B3D00EAEE7F /* Realm in Frameworks */,
@@ -280,6 +282,7 @@
 				0A1E733B28B52B3D00EAEE7F /* Realm */,
 				0A1E733D28B52B3D00EAEE7F /* RealmSwift */,
 				0A1E734028B52B9A00EAEE7F /* SnapKit */,
+				0A1E739128B76BA400EAEE7F /* IQKeyboardManagerSwift */,
 			);
 			productName = Diary;
 			productReference = 0A1E731328B4A5C800EAEE7F /* Diary.app */;
@@ -312,6 +315,7 @@
 			packageReferences = (
 				0A1E733A28B52B3D00EAEE7F /* XCRemoteSwiftPackageReference "realm-swift" */,
 				0A1E733F28B52B9A00EAEE7F /* XCRemoteSwiftPackageReference "SnapKit" */,
+				0A1E739028B76BA400EAEE7F /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 			);
 			productRefGroup = 0A1E731428B4A5C800EAEE7F /* Products */;
 			projectDirPath = "";
@@ -616,6 +620,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		0A1E739028B76BA400EAEE7F /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -633,6 +645,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 0A1E733F28B52B9A00EAEE7F /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		0A1E739128B76BA400EAEE7F /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0A1E739028B76BA400EAEE7F /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
