@@ -115,7 +115,26 @@ class WriteViewController: BaseViewController {
 
 extension WriteViewController: PHPickerViewControllerDelegate {
     func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
-        let result = results.first
+        guard let result = results.first else {
+            showAlertMessage(title: "이미지 선택에 실패하였습니다.")
+            return
+        }
         
+        let itemProvider = result.itemProvider
+        
+        if itemProvider.canLoadObject(ofClass: UIImage.self) {
+            itemProvider.loadObject(ofClass: UIImage.self) { image, error in
+                DispatchQueue.main.async {
+                    guard let image = image as? UIImage else {
+                        self.showAlertMessage(title: "이미지 로드에 실패하였습니다.")
+                        return
+                    }
+                    self.writeView.imageView.image = image
+                    self.dismiss(animated: true)
+                }
+            }
+        } else {
+            showAlertMessage(title: "이미지 로드에 실패하였습니다.")
+        }
     }
 }
