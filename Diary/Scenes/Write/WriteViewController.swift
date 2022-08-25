@@ -7,9 +7,13 @@
 
 import UIKit
 
+import RealmSwift
+
+
 class WriteViewController: BaseViewController {
     
     let writeView = WriteView()
+    let localRealm = try! Realm()
     
     override func loadView() {
         self.view = writeView
@@ -33,6 +37,17 @@ class WriteViewController: BaseViewController {
     }
     
     @objc func saveButtonClicked() {
+        let title = writeView.titleTextField.text!     // 👻 빈 문자 확인하기
+//        let entryDate = writeView.dateTextField.text  // 👻 데이트피커 띄우기
+        let contents = writeView.contentsTextView.text
+//        let photoURL =
+        
+        let task = UserDiary(title: title, entryDate: .now, contents: contents, photoURL: nil)
+        try! localRealm.write {
+            localRealm.add(task)
+        }
+        print(task)
+        
         dismiss(animated: true)
     }
 }

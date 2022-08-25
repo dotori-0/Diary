@@ -32,6 +32,7 @@
 		0A1E737C28B6665100EAEE7F /* WriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1E737B28B6665100EAEE7F /* WriteView.swift */; };
 		0A1E737E28B6666100EAEE7F /* WriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1E737D28B6666100EAEE7F /* WriteViewController.swift */; };
 		0A1E738028B6711B00EAEE7F /* RoundedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1E737F28B6711B00EAEE7F /* RoundedTextField.swift */; };
+		0A1E738D28B7650200EAEE7F /* UserDiary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1E738C28B7650200EAEE7F /* UserDiary.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,7 @@
 		0A1E737B28B6665100EAEE7F /* WriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteView.swift; sourceTree = "<group>"; };
 		0A1E737D28B6666100EAEE7F /* WriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteViewController.swift; sourceTree = "<group>"; };
 		0A1E737F28B6711B00EAEE7F /* RoundedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedTextField.swift; sourceTree = "<group>"; };
+		0A1E738C28B7650200EAEE7F /* UserDiary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDiary.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +168,7 @@
 		0A1E732C28B4AC6800EAEE7F /* Realm */ = {
 			isa = PBXGroup;
 			children = (
+				0A1E738C28B7650200EAEE7F /* UserDiary.swift */,
 			);
 			path = Realm;
 			sourceTree = "<group>";
@@ -364,6 +367,7 @@
 				0A1E738028B6711B00EAEE7F /* RoundedTextField.swift in Sources */,
 				0A1E732E28B4ADFC00EAEE7F /* BaseViewController.swift in Sources */,
 				0A1E737C28B6665100EAEE7F /* WriteView.swift in Sources */,
+				0A1E738D28B7650200EAEE7F /* UserDiary.swift in Sources */,
 				0A1E735A28B64E9300EAEE7F /* Color.swift in Sources */,
 				0A1E735528B52CDD00EAEE7F /* DiaryImageView.swift in Sources */,
 				0A1E733028B4AE8E00EAEE7F /* BaseView.swift in Sources */,
