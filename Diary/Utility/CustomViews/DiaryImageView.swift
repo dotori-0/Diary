@@ -23,5 +23,6 @@ class DiaryImageView: UIImageView {
         layer.cornerRadius = 8
         layer.borderWidth = 1
         layer.borderColor = Constants.Color.tintColor.cgColor
+        clipsToBounds = true
     }
 }
