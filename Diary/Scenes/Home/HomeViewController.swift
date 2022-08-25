@@ -12,6 +12,9 @@ import RealmSwift
 
 class HomeViewController: BaseViewController {
     
+    let localRealm = try! Realm()
+    var tasks: Results<UserDiary>!
+    
     lazy var tableView: UITableView = {
        let view = UITableView()
         view.dataSource = self
@@ -21,11 +24,20 @@ class HomeViewController: BaseViewController {
         return view
     }()
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
 //        view.backgroundColor = .systemIndigo
+        fetchRealm()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        tableView.reloadData()
+    }
+    
     
     override func setUI() {
         print(self, #function)
@@ -48,32 +60,41 @@ class HomeViewController: BaseViewController {
         navigationController?.navigationBar.standardAppearance = appearance
     }
     
+    
     override func setConstraints() {
         tableView.snp.makeConstraints { make in
             make.edges.equalTo(view.safeAreaLayoutGuide)
         }
     }
     
+    
+    func fetchRealm() {
+        tasks = localRealm.objects(UserDiary.self)
+//        tasks = localRealm.objects(UserDiary)
+    }
+    
+    
     @objc func addButtonClicked() {
         let vc = WriteViewController()
         transition(vc, transitionStyle: .presentFullScreenNavigation)
     }
     
+    
     @objc func sortButtonClicked() {
         
     }
     
+    
     @objc func filterButtonClicked() {
         
     }
-    
 }
 
 
 extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 //        print("numberOfRowsInSection")
-        return 10
+        return tasks.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -83,6 +104,9 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
             print("Cannot find HomeTableViewCell")
             return UITableViewCell()
         }
+        
+        cell.showData(entry: tasks[indexPath.row])
+        
         
         return cell
     }

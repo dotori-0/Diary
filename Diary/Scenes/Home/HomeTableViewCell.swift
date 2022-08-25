@@ -48,6 +48,8 @@ class HomeTableViewCell: BaseTableViewCell {
         let view = UIStackView(arrangedSubviews: [titleLabel, dateLabel, contentsLabel])
         view.alignment = .leading
         view.backgroundColor = .systemMint
+        view.axis = .vertical
+        view.distribution = .fillEqually
         return view
     }()
     
@@ -79,8 +81,15 @@ class HomeTableViewCell: BaseTableViewCell {
         stackView.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
             make.leading.equalToSuperview().inset(spacing)
-            make.trailing.greaterThanOrEqualTo(diaryImageView.snp.leading).offset(-spacing)
+            make.trailing.equalTo(diaryImageView.snp.leading).offset(-spacing)
             make.height.equalTo(diaryImageView.snp.height)
         }
+    }
+    
+    func showData(entry: UserDiary) {
+        titleLabel.text = entry.title
+        dateLabel.text = "\(entry.entryDate)"
+        contentsLabel.text = entry.contents
+        
     }
 }

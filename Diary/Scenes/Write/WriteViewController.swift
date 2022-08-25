@@ -66,7 +66,7 @@ class WriteViewController: BaseViewController {
     
     
     @objc func saveButtonClicked() {
-        let title = writeView.titleTextField.text!     // 👻 빈 문자 확인하기
+        let title = writeView.titleTextField.text!      // 👻 빈 문자 확인하기
 //        let entryDate = writeView.dateTextField.text  // 👻 데이트피커 띄우기
         let contents = writeView.contentsTextView.text
 //        let photoURL =
