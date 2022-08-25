@@ -47,7 +47,7 @@ class HomeTableViewCell: BaseTableViewCell {
 //        view.arrangedSubviews = [titleLabel, dateLabel, contentsLabel]  // Cannot assign to property: 'arrangedSubviews' is a get-only property
         let view = UIStackView(arrangedSubviews: [titleLabel, dateLabel, contentsLabel])
         view.alignment = .leading
-        view.backgroundColor = .systemMint
+        view.backgroundColor = .systemGray4
         view.axis = .vertical
         view.distribution = .fillEqually
         return view
@@ -68,11 +68,11 @@ class HomeTableViewCell: BaseTableViewCell {
     }
     
     override func setConstraints() {
-        let spacing = 12
+        let spacing = 16
         
         diaryImageView.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
-            make.trailing.equalToSuperview().inset(spacing)
+            make.leading.equalToSuperview().inset(spacing)
 //            make.trailingMargin.equalToSuperview().inset(spacing)
             make.height.equalToSuperview().multipliedBy(0.8)
             make.width.equalTo(diaryImageView.snp.height)
@@ -80,8 +80,8 @@ class HomeTableViewCell: BaseTableViewCell {
         
         stackView.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
-            make.leading.equalToSuperview().inset(spacing)
-            make.trailing.equalTo(diaryImageView.snp.leading).offset(-spacing)
+            make.trailing.equalToSuperview().inset(spacing)
+            make.leading.equalTo(diaryImageView.snp.trailing).offset(spacing)
             make.height.equalTo(diaryImageView.snp.height)
         }
     }
@@ -90,6 +90,5 @@ class HomeTableViewCell: BaseTableViewCell {
         titleLabel.text = entry.title
         dateLabel.text = "\(entry.entryDate)"
         contentsLabel.text = entry.contents
-        
     }
 }
