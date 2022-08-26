@@ -82,7 +82,7 @@ class HomeViewController: BaseViewController {
     
     
     @objc func sortButtonClicked() {
-        
+        tasks = localRealm.objects(UserDiary.self).sorted(byKeyPath: "title", ascending: true)
     }
     
     
