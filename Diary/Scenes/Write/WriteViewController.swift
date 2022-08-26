@@ -30,7 +30,7 @@ class WriteViewController: BaseViewController {
     
     
     override func setUI() {
-        writeView.backgroundColor = Constants.Color.backgroundColor
+        super.setUI()
         
         configureAddPhotoButton()
         

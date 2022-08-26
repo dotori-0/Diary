@@ -7,45 +7,46 @@
 
 import UIKit
 
-import RealmSwift
+import RealmSwift  // Realm 1. import
 
 
 class HomeViewController: BaseViewController {
     
-    let localRealm = try! Realm()
-    var tasks: Results<UserDiary>!
+    let localRealm = try! Realm()  // Realm 2.
+    var tasks: Results<UserDiary>! {
+        didSet {
+            print("Tasks Changed")
+            tableView.reloadData()
+        }
+    }
     
     lazy var tableView: UITableView = {
        let view = UITableView()
         view.dataSource = self
         view.delegate = self
         view.rowHeight = 100
+        view.backgroundColor = .clear
         view.register(HomeTableViewCell.self, forCellReuseIdentifier: HomeTableViewCell.reuseIdentifier)
         return view
-    }()
+    }()  // 즉시 실행 클로저
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        view.backgroundColor = .systemIndigo
-        fetchRealm()
+//        fetchRealm()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        tableView.reloadData()
+        fetchRealm()
+//        tableView.reloadData()
     }
     
     
     override func setUI() {
+        super.setUI()
         print(self, #function)
-        
-        // 둘 다 적용됨
-//        view.layer.backgroundColor = UIColor.yellow.cgColor
-//        view.backgroundColor = .systemPink
-        view.backgroundColor = Constants.Color.backgroundColor
         
         view.addSubview(tableView)
         
@@ -55,7 +56,7 @@ class HomeViewController: BaseViewController {
         navigationItem.leftBarButtonItems = [sortButton, filterButton]
         
         let appearance = UINavigationBarAppearance()
-        appearance.backgroundColor = .systemBackground
+//        appearance.backgroundColor = Constants.Color.backgroundColor
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
         navigationController?.navigationBar.standardAppearance = appearance
     }
@@ -69,6 +70,7 @@ class HomeViewController: BaseViewController {
     
     
     func fetchRealm() {
+        // Realm 3. Realm 데이터를 정렬해 tasks에 담기
         tasks = localRealm.objects(UserDiary.self).sorted(byKeyPath: "entryDate", ascending: false)
     }
     

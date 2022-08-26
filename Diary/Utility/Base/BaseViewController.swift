@@ -18,9 +18,9 @@ class BaseViewController: UIViewController {
     }
     
     func setUI() {
-        print(self, #function)  // 출력 안 됨
-//        view.backgroundColor = .systemPink  // 동작 X
-        view.layer.backgroundColor = UIColor.yellow.cgColor  // 동작 X
+        print(self, #function)  // ❔ HomeViewController에서 super.setUI() 호출하면, self가 왜 BaseViewController가 아니라 HomeViewController 인지?
+        view.backgroundColor = Constants.Color.backgroundColor
+//        view.layer.backgroundColor = UIColor.yellow.cgColor
     }
     
     func setConstraints() { }

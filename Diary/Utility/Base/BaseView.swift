@@ -27,8 +27,7 @@ class BaseView: UIView {
 //        backgroundColor = .systemBackground
 //        backgroundColor = .systemMint
 //        layer.backgroundColor = UIColor.systemBackground.cgColor
-        layer.backgroundColor = UIColor.systemMint.cgColor  // 동작 X
-        
+//        layer.backgroundColor = UIColor.systemMint.cgColor
     }
     
     func setConstraints() { }
