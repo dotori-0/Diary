@@ -36,6 +36,7 @@
 		0A1E739228B76BA400EAEE7F /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0A1E739128B76BA400EAEE7F /* IQKeyboardManagerSwift */; };
 		0A1E739528B7CD3400EAEE7F /* FileManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1E739428B7CD3400EAEE7F /* FileManager+Extension.swift */; };
 		0A1E739728B7CDDC00EAEE7F /* Alert+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1E739628B7CDDC00EAEE7F /* Alert+Extension.swift */; };
+		0A1E73A428B9FDBF00EAEE7F /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1E73A328B9FDBE00EAEE7F /* TabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +97,7 @@
 		0A1E738C28B7650200EAEE7F /* UserDiary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDiary.swift; sourceTree = "<group>"; };
 		0A1E739428B7CD3400EAEE7F /* FileManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Extension.swift"; sourceTree = "<group>"; };
 		0A1E739628B7CDDC00EAEE7F /* Alert+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alert+Extension.swift"; sourceTree = "<group>"; };
+		0A1E73A328B9FDBE00EAEE7F /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,9 +166,11 @@
 		0A1E732B28B4AC5A00EAEE7F /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				0A1E73A328B9FDBE00EAEE7F /* TabBarController.swift */,
 				0A1E733728B52A7800EAEE7F /* Home */,
 				0A1E733828B52A7D00EAEE7F /* Write */,
 				0A1E733928B52A8400EAEE7F /* SearchImage */,
+				0A1E73A528B9FE2D00EAEE7F /* Settings */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -265,6 +269,13 @@
 				0A1E739428B7CD3400EAEE7F /* FileManager+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		0A1E73A528B9FE2D00EAEE7F /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -391,6 +402,7 @@
 				0A1E734528B52BE400EAEE7F /* HomeTableViewCell.swift in Sources */,
 				0A1E739728B7CDDC00EAEE7F /* Alert+Extension.swift in Sources */,
 				0A1E731928B4A5C800EAEE7F /* SceneDelegate.swift in Sources */,
+				0A1E73A428B9FDBF00EAEE7F /* TabBarController.swift in Sources */,
 				0A1E737E28B6666100EAEE7F /* WriteViewController.swift in Sources */,
 				0A1E733328B5296500EAEE7F /* BaseCollectionViewCell.swift in Sources */,
 			);
