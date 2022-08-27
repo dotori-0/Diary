@@ -22,6 +22,6 @@ class TabBarController: UITabBarController {
         settingsVC.tabBarItem.title = "설정"
         settingsVC.tabBarItem.image = UIImage(systemName: "gear")
         
-        setViewControllers([homeNC, settingsVC], animated: true)
+        setViewControllers([settingsVC, homeNC], animated: true)
     }
 }

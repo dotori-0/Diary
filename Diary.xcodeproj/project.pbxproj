@@ -39,6 +39,9 @@
 		0A1E73A428B9FDBF00EAEE7F /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1E73A328B9FDBE00EAEE7F /* TabBarController.swift */; };
 		0A1E73A728B9FFAE00EAEE7F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1E73A628B9FFAE00EAEE7F /* SettingsViewController.swift */; };
 		0A1E73A928BA469600EAEE7F /* UserDiaryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1E73A828BA469600EAEE7F /* UserDiaryRepository.swift */; };
+		0A1E73AC28BA700600EAEE7F /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1E73AB28BA700600EAEE7F /* Strings.swift */; };
+		0A1E73AE28BA723100EAEE7F /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1E73AD28BA723000EAEE7F /* SettingsView.swift */; };
+		0A1E73B028BA772700EAEE7F /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1E73AF28BA772700EAEE7F /* RoundedButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +105,9 @@
 		0A1E73A328B9FDBE00EAEE7F /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		0A1E73A628B9FFAE00EAEE7F /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		0A1E73A828BA469600EAEE7F /* UserDiaryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDiaryRepository.swift; sourceTree = "<group>"; };
+		0A1E73AB28BA700600EAEE7F /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		0A1E73AD28BA723000EAEE7F /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		0A1E73AF28BA772700EAEE7F /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -236,6 +242,7 @@
 			children = (
 				0A1E735428B52CDD00EAEE7F /* DiaryImageView.swift */,
 				0A1E737F28B6711B00EAEE7F /* RoundedTextField.swift */,
+				0A1E73AF28BA772700EAEE7F /* RoundedButton.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -245,6 +252,7 @@
 			children = (
 				0A1E735928B64E9300EAEE7F /* Color.swift */,
 				0A1E735B28B64F5D00EAEE7F /* FontSize.swift */,
+				0A1E73AB28BA700600EAEE7F /* Strings.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -280,6 +288,7 @@
 			isa = PBXGroup;
 			children = (
 				0A1E73A628B9FFAE00EAEE7F /* SettingsViewController.swift */,
+				0A1E73AD28BA723000EAEE7F /* SettingsView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -400,10 +409,12 @@
 				0A1E735528B52CDD00EAEE7F /* DiaryImageView.swift in Sources */,
 				0A1E733028B4AE8E00EAEE7F /* BaseView.swift in Sources */,
 				0A1E734328B52BD200EAEE7F /* HomeViewController.swift in Sources */,
+				0A1E73AC28BA700600EAEE7F /* Strings.swift in Sources */,
 				0A1E731728B4A5C800EAEE7F /* AppDelegate.swift in Sources */,
 				0A1E73A928BA469600EAEE7F /* UserDiaryRepository.swift in Sources */,
 				0A1E737728B65BE400EAEE7F /* ReusableView.swift in Sources */,
 				0A1E737A28B6653C00EAEE7F /* Transition+Extension.swift in Sources */,
+				0A1E73AE28BA723100EAEE7F /* SettingsView.swift in Sources */,
 				0A1E73A728B9FFAE00EAEE7F /* SettingsViewController.swift in Sources */,
 				0A1E735C28B64F5D00EAEE7F /* FontSize.swift in Sources */,
 				0A1E733528B529E100EAEE7F /* BaseTableViewCell.swift in Sources */,
@@ -413,6 +424,7 @@
 				0A1E73A428B9FDBF00EAEE7F /* TabBarController.swift in Sources */,
 				0A1E737E28B6666100EAEE7F /* WriteViewController.swift in Sources */,
 				0A1E733328B5296500EAEE7F /* BaseCollectionViewCell.swift in Sources */,
+				0A1E73B028BA772700EAEE7F /* RoundedButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -45,12 +45,6 @@ class WriteView: BaseView {
         return view
     }()
     
-    let testLabel: UILabel = {
-        let label = UILabel()
-        label.text = "test"
-        return label
-    }()
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
@@ -63,7 +57,6 @@ class WriteView: BaseView {
         [imageView, addPhotoButton, titleTextField, dateTextField, contentsTextView].forEach {
             addSubview($0)
         }
-        self.addSubview(testLabel)
     }
     
     override func setConstraints() {
@@ -101,10 +94,6 @@ class WriteView: BaseView {
             make.centerX.equalToSuperview()
             make.top.equalTo(dateTextField.snp.bottom).offset(12)
             make.bottom.equalTo(safeAreaLayoutGuide).offset(-spacing)
-        }
-        
-        testLabel.snp.makeConstraints { make in
-            make.centerY.centerX.equalToSuperview()
         }
     }
 }
