@@ -46,7 +46,7 @@ class HomeViewController: BaseViewController {
     
     override func setUI() {
         super.setUI()
-        print(self, #function)
+//        print(self, #function)
         
         view.addSubview(tableView)
         
@@ -112,5 +112,36 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         cell.diaryImageView.image = loadImageFromDocuments(fileName: fileName)  // 👻 셀 파일로 작업 옮기기
         
         return cell
+    }
+    
+//    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+//        <#code#>
+//    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let delete = UIContextualAction(style: .normal, title: "삭제") { action, view, completion in
+//            let task = self.tasks[indexPath.row]
+            
+//            self.removeImageFromDocuments(fileName: "\(task.objectId).jpg")
+            self.removeImageFromDocuments(fileName: "\(self.tasks[indexPath.row].objectId).jpg")
+            
+            do {
+                try self.localRealm.write {
+                    print("tasks before: \(self.tasks.count)")
+//                    self.localRealm.delete(task)               // tasks에서도 지워진다
+                    self.localRealm.delete(self.tasks[indexPath.row])
+                    print("tasks after: \(self.tasks.count)")  // 👻 tasks가 바뀌는데도 didSet 실행되지 않는 이유?
+                }
+            } catch let error{
+                self.showAlertMessage(title: "일기 삭제에 실패했습니다.")
+                print(error)
+            }
+            
+            self.tableView.reloadData()  // 👻 didSet이 실행이 되지 않아서 리로드를 따로 해 주어야 한다...ㅠㅠ..ㅠ...
+        }
+        
+        delete.image = UIImage(systemName: "trash.fill")
+        
+        return UISwipeActionsConfiguration(actions: [delete])
     }
 }

@@ -11,14 +11,14 @@ class BaseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(self, #function)  // <Diary.HomeViewController: 0x130708ad0> viewDidLoad() 출력됨
+//        print(self, #function)  // ❔ HomeViewController에서 super.viewDidLoad() 호출하면, self가 왜 BaseViewController가 아니라 HomeViewController 인지?
         setUI()
         setConstraints()
         setTargets()
     }
     
     func setUI() {
-        print(self, #function)  // ❔ HomeViewController에서 super.setUI() 호출하면, self가 왜 BaseViewController가 아니라 HomeViewController 인지?
+//        print(self, #function)  // ❔ HomeViewController에서 super.setUI() 호출하면, self가 왜 BaseViewController가 아니라 HomeViewController 인지?
         view.backgroundColor = Constants.Color.backgroundColor
 //        view.layer.backgroundColor = UIColor.yellow.cgColor
     }

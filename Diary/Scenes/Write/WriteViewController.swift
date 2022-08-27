@@ -105,9 +105,6 @@ class WriteViewController: BaseViewController {
         try! localRealm.write {
             localRealm.add(task)
         }
-        print(Date())
-        print(Date.now)
-        print(Date.now.formatted())
         
         if let image = writeView.imageView.image {
             let fileName = "\(task.objectId).jpg"
@@ -123,7 +120,7 @@ class WriteViewController: BaseViewController {
 extension WriteViewController: PHPickerViewControllerDelegate {
     func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
         guard let result = results.first else {
-            showAlertMessage(title: "이미지 선택에 실패하였습니다.")
+            showAlertMessage(title: "이미지 선택에 실패했습니다.")
             // 👻 Attempt to present <UIAlertController: 0x14184e400> on <UINavigationController: 0x143025c00> (from <Diary.WriteViewController: 0x13fd07660>) which is already presenting <PHPickerViewController: 0x13d8566e0>.
             return
         }
@@ -134,7 +131,7 @@ extension WriteViewController: PHPickerViewControllerDelegate {
             itemProvider.loadObject(ofClass: UIImage.self) { image, error in
                 DispatchQueue.main.async {
                     guard let image = image as? UIImage else {
-                        self.showAlertMessage(title: "이미지 로드에 실패하였습니다.")
+                        self.showAlertMessage(title: "이미지 로드에 실패했습니다.")
                         return
                     }
                     self.writeView.imageView.image = image
@@ -142,7 +139,7 @@ extension WriteViewController: PHPickerViewControllerDelegate {
                 }
             }
         } else {
-            showAlertMessage(title: "이미지 로드에 실패하였습니다.")
+            showAlertMessage(title: "이미지 로드에 실패했습니다.")
         }
     }
 }
