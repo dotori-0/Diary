@@ -14,7 +14,8 @@ import RealmSwift
 class WriteViewController: BaseViewController {
     
     let writeView = WriteView()
-    let localRealm = try! Realm()
+//    let localRealm = try! Realm()
+    let repository = UserDiaryRepository()
     
     
     override func loadView() {
@@ -25,7 +26,7 @@ class WriteViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        print("Realm is located at:", localRealm.configuration.fileURL!)
+        print("Realm is located at:", repository.localRealm.configuration.fileURL!)
     }
     
     
@@ -100,14 +101,17 @@ class WriteViewController: BaseViewController {
         let contents = writeView.contentsTextView.text
 //        let photoURL =
         
-        let task = UserDiary(title: title, entryDate: .now, contents: contents, photoURL: nil)
-        // 👻 do-catch 문 적용하기
-        try! localRealm.write {
-            localRealm.add(task)
+        let entry = UserDiary(title: title, entryDate: .now, contents: contents, photoURL: nil)
+//        // 👻 do-catch 문 적용하기
+//        try! localRealm.write {
+//            localRealm.add(task)
+//        }
+        repository.writeEntry(entry) {
+            self.showAlertMessage(title: "일기 작성에 실패했습니다.")
         }
         
         if let image = writeView.imageView.image {
-            let fileName = "\(task.objectId).jpg"
+            let fileName = "\(entry.objectId).jpg"
             
             saveImageToDocuments(fileName: fileName, image: image)
         }

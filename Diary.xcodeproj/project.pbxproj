@@ -38,6 +38,7 @@
 		0A1E739728B7CDDC00EAEE7F /* Alert+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1E739628B7CDDC00EAEE7F /* Alert+Extension.swift */; };
 		0A1E73A428B9FDBF00EAEE7F /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1E73A328B9FDBE00EAEE7F /* TabBarController.swift */; };
 		0A1E73A728B9FFAE00EAEE7F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1E73A628B9FFAE00EAEE7F /* SettingsViewController.swift */; };
+		0A1E73A928BA469600EAEE7F /* UserDiaryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1E73A828BA469600EAEE7F /* UserDiaryRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +101,7 @@
 		0A1E739628B7CDDC00EAEE7F /* Alert+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alert+Extension.swift"; sourceTree = "<group>"; };
 		0A1E73A328B9FDBE00EAEE7F /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		0A1E73A628B9FFAE00EAEE7F /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		0A1E73A828BA469600EAEE7F /* UserDiaryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDiaryRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				0A1E738C28B7650200EAEE7F /* UserDiary.swift */,
+				0A1E73A828BA469600EAEE7F /* UserDiaryRepository.swift */,
 			);
 			path = Realm;
 			sourceTree = "<group>";
@@ -398,6 +401,7 @@
 				0A1E733028B4AE8E00EAEE7F /* BaseView.swift in Sources */,
 				0A1E734328B52BD200EAEE7F /* HomeViewController.swift in Sources */,
 				0A1E731728B4A5C800EAEE7F /* AppDelegate.swift in Sources */,
+				0A1E73A928BA469600EAEE7F /* UserDiaryRepository.swift in Sources */,
 				0A1E737728B65BE400EAEE7F /* ReusableView.swift in Sources */,
 				0A1E737A28B6653C00EAEE7F /* Transition+Extension.swift in Sources */,
 				0A1E73A728B9FFAE00EAEE7F /* SettingsViewController.swift in Sources */,

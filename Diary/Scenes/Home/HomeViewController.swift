@@ -13,7 +13,8 @@ import SwiftUI
 
 class HomeViewController: BaseViewController {
     
-    let localRealm = try! Realm()  // Realm 2.
+//    let localRealm = try! Realm()  // Realm 2.
+    let repository = UserDiaryRepository()
     var tasks: Results<UserDiary>! {
         didSet {
             print("Tasks Changed")
@@ -74,7 +75,10 @@ class HomeViewController: BaseViewController {
     
     func fetchRealm() {
         // Realm 3. Realm 데이터를 정렬해 tasks에 담기
-        tasks = localRealm.objects(UserDiary.self).sorted(byKeyPath: "entryDate", ascending: false)
+//        tasks = localRealm.objects(UserDiary.self).sorted(byKeyPath: "entryDate", ascending: false)
+        tasks = repository.fetch()
+        // objects()는 한 번 가져오는 게 아니라 계속 동기화
+        // viewWillAppear에서 명확하게 tasks의 변경이 일어나서 테이블뷰가 리로드되도록 viewDidLoad에서 viewWillAppear로 옮김
     }
     
     
@@ -85,12 +89,14 @@ class HomeViewController: BaseViewController {
     
     
     @objc func sortButtonClicked() {
-        tasks = localRealm.objects(UserDiary.self).sorted(byKeyPath: "title", ascending: true)
+//        tasks = localRealm.objects(UserDiary.self).sorted(byKeyPath: "title", ascending: true)
+        tasks = repository.sort()
     }
     
     
     @objc func filterButtonClicked() {
-        tasks = localRealm.objects(UserDiary.self).filter("diaryTitle CONTAINS[c] 'A'")
+//        tasks = localRealm.objects(UserDiary.self).filter("diaryTitle CONTAINS[c] 'A'")
+        tasks = repository.filter()
     }
 }
 
@@ -127,14 +133,17 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         
         let favorite = UIContextualAction(style: .normal, title: nil) { action, view, completion in
             
-            do {
-                try self.localRealm.write {
-                    task.isFavorite.toggle()
-                }
-            } catch let error {
+//            do {
+//                try self.localRealm.write {
+//                    task.isFavorite.toggle()
+//                }
+//            } catch let error {
+//                self.showAlertMessage(title: "즐겨찾기 수정에 실패했습니다.")
+//                print(error)
+//            }
+            self.repository.updateFavorite(entry: task, errorHandler: {
                 self.showAlertMessage(title: "즐겨찾기 수정에 실패했습니다.")
-                print(error)
-            }
+            })
             
             self.tableView.reloadData()
         }
@@ -150,22 +159,23 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let delete = UIContextualAction(style: .normal, title: "삭제") { action, view, completion in
-//            let task = self.tasks[indexPath.row]
+            let task = self.tasks[indexPath.row]
             
-//            self.removeImageFromDocuments(fileName: "\(task.objectId).jpg")
-            self.removeImageFromDocuments(fileName: "\(self.tasks[indexPath.row].objectId).jpg")
+            self.removeImageFromDocuments(fileName: "\(task.objectId).jpg")
             
-            do {
-                try self.localRealm.write {
-                    print("tasks before: \(self.tasks.count)")
-//                    self.localRealm.delete(task)               // tasks에서도 지워진다
-                    self.localRealm.delete(self.tasks[indexPath.row])
-                    print("tasks after: \(self.tasks.count)")  // 👻 tasks가 바뀌는데도 didSet 실행되지 않는 이유?
-                }
-            } catch let error{
+//            do {
+//                try self.localRealm.write {
+//                    print("tasks before: \(self.tasks.count)")
+////                    self.localRealm.delete(task)               // tasks에서도 지워진다
+//                    print("tasks after: \(self.tasks.count)")  // 👻 tasks가 바뀌는데도 didSet 실행되지 않는 이유?
+//                }
+//            } catch let error{
+//                self.showAlertMessage(title: "일기 삭제에 실패했습니다.")
+//                print(error)
+//            }
+            self.repository.deleteEntry(task, errorHandler: {
                 self.showAlertMessage(title: "일기 삭제에 실패했습니다.")
-                print(error)
-            }
+            })
             
             self.tableView.reloadData()  // 👻 didSet이 실행이 되지 않아서 리로드를 따로 해 주어야 한다...ㅠㅠ..ㅠ...
         }
