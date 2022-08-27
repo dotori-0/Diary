@@ -8,6 +8,7 @@
 import UIKit
 
 import RealmSwift  // Realm 1. import
+import SwiftUI
 
 
 class HomeViewController: BaseViewController {
@@ -114,9 +115,33 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
-//    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-//        <#code#>
-//    }
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let task = self.tasks[indexPath.row]
+        print("before:", task.isFavorite)
+        
+        let favorite = UIContextualAction(style: .normal, title: nil) { action, view, completion in
+            
+            do {
+                try self.localRealm.write {
+                    task.isFavorite.toggle()
+                }
+            } catch let error {
+                self.showAlertMessage(title: "즐겨찾기 수정에 실패했습니다.")
+                print(error)
+            }
+            
+            self.tableView.reloadData()
+        }
+        
+        print("after:", task.isFavorite)
+        
+        let symbolName = task.isFavorite ? "heart.fill" : "heart"
+        favorite.image = UIImage(systemName: symbolName)
+        favorite.backgroundColor = .systemPink
+        
+        return UISwipeActionsConfiguration(actions: [favorite])
+    }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let delete = UIContextualAction(style: .normal, title: "삭제") { action, view, completion in
