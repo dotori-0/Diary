@@ -40,8 +40,10 @@ class HomeViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        // 화면 갱신은 화면 전환 코드 및 생명 주기 실행 점검 필요!
+        // present, overCurrentContext, overFullScreen > viewWillAppear X (화면이 사라진다고 생각하지 않고 루트 뷰가 그대로 남아 있기 때문)
         fetchRealm()
-//        tableView.reloadData()
+//        tableView.reloadData()  // didSet 처리를 했으므로 주석 처리
     }
     
     
@@ -88,7 +90,7 @@ class HomeViewController: BaseViewController {
     
     
     @objc func filterButtonClicked() {
-        
+        tasks = localRealm.objects(UserDiary.self).filter("diaryTitle CONTAINS[c] 'A'")
     }
 }
 
@@ -115,7 +117,10 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
+    // 참고: TableView Editing Mode (데이터 일치시키는 기능이 조금 힘들다)
+    // 테이블 뷰 셀 높이가 작을 경우, 이미지가 없을 때, 시스템 이미지가 아닌 경우 어떤지 확인해 보기
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+//        completionHandler(true)  // 넣어도 됨
         
         let task = self.tasks[indexPath.row]
         print("before:", task.isFavorite)
