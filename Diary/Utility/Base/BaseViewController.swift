@@ -14,7 +14,7 @@ class BaseViewController: UIViewController {
 //        print(self, #function)  // ❔ HomeViewController에서 super.viewDidLoad() 호출하면, self가 왜 BaseViewController가 아니라 HomeViewController 인지?
         setUI()
         setConstraints()
-        setTargets()
+        setActions()
     }
     
     func setUI() {
@@ -25,7 +25,7 @@ class BaseViewController: UIViewController {
     
     func setConstraints() { }
     
-    func setTargets() { }
+    func setActions() { }
     
 //    func showAlertMessage(title: String, buttonTitle: String = "확인") {
 //        let alert = UIAlertController(title: title, message: nil, preferredStyle: .alert)
