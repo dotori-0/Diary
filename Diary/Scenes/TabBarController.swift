@@ -18,6 +18,10 @@ class TabBarController: UITabBarController {
         homeNC.tabBarItem.image = UIImage(systemName: "house")
         homeNC.tabBarItem.selectedImage = UIImage(systemName: "house.fill")
         
-        setViewControllers([homeNC], animated: true)
+        let settingsVC = SettingsViewController()
+        settingsVC.tabBarItem.title = "설정"
+        settingsVC.tabBarItem.image = UIImage(systemName: "gear")
+        
+        setViewControllers([homeNC, settingsVC], animated: true)
     }
 }
