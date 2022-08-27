@@ -20,7 +20,7 @@ class SettingsView: BaseView {
         return view
     }()
     
-    let infoLabel: UILabel = {
+    let backupInfoLabel: UILabel = {
        let label = UILabel()
         label.text = Constants.Strings.backupInfo
         label.numberOfLines = 0
@@ -35,6 +35,15 @@ class SettingsView: BaseView {
     
     let bringBackupFileButton: RoundedButton = {
         return RoundedButton(title: "복원할 백업 파일 가져오기")
+    }()
+    
+    let restoreInfoLabel: UILabel = {
+       let label = UILabel()
+        label.text = Constants.Strings.restoreInfo
+        label.numberOfLines = 0
+        label.font = .systemFont(ofSize: 12)
+        label.backgroundColor = .systemGreen
+        return label
     }()
     
     let tableView: UITableView = {
@@ -56,7 +65,7 @@ class SettingsView: BaseView {
     
     override func setUI() {
         super.setUI()
-        [cloudImageView, infoLabel, backupButton, bringBackupFileButton, tableView].forEach {
+        [cloudImageView, backupInfoLabel, backupButton, bringBackupFileButton, restoreInfoLabel, tableView].forEach {
             addSubview($0)
         }
         
@@ -104,7 +113,7 @@ class SettingsView: BaseView {
             make.height.equalTo(cloudImageView.snp.width)
         }
         
-        infoLabel.snp.makeConstraints { make in
+        backupInfoLabel.snp.makeConstraints { make in
             make.leading.equalTo(cloudImageView.snp.trailing).offset(20)
             make.centerY.equalTo(cloudImageView)
 //            make.trailing.greaterThanOrEqualToSuperview().offset(20)  // X
@@ -114,7 +123,7 @@ class SettingsView: BaseView {
         }
         
         backupButton.snp.makeConstraints { make in
-            make.top.equalTo(infoLabel.snp.bottom).offset(40)
+            make.top.equalTo(backupInfoLabel.snp.bottom).offset(20)
             make.centerX.equalToSuperview()
             make.width.equalToSuperview().multipliedBy(0.9)
             make.height.equalTo(44)
@@ -127,8 +136,14 @@ class SettingsView: BaseView {
             make.height.equalTo(44)
         }
         
+        restoreInfoLabel.snp.makeConstraints { make in
+            make.top.equalTo(bringBackupFileButton.snp.bottom).offset(8)
+            make.width.equalTo(bringBackupFileButton).inset(12)
+            make.centerX.equalTo(bringBackupFileButton)
+        }
+        
         tableView.snp.makeConstraints { make in
-            make.top.equalTo(bringBackupFileButton.snp.bottom).offset(20)
+            make.top.equalTo(restoreInfoLabel.snp.bottom).offset(20)
             make.width.equalToSuperview()
             make.centerX.equalToSuperview()
             make.bottom.equalTo(safeAreaLayoutGuide)

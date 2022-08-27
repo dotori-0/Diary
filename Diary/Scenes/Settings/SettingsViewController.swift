@@ -23,8 +23,7 @@ class SettingsViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationController?.title = "네비 컨트롤러"
-        title = "타이틀"
+//        title = "타이틀"  // Tab Bar Title
     }
 
     override func setUI() {
