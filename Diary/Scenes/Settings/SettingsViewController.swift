@@ -15,7 +15,11 @@ class SettingsViewController: BaseViewController {
     
     let settingsView = SettingsView()
     
-    var backupFileNames: [String] = []
+    var backupFileNames: [String] = [] {
+        didSet {
+            settingsView.tableView.reloadData()
+        }
+    }
     
     
     // MARK: - Functions
@@ -79,6 +83,8 @@ class SettingsViewController: BaseViewController {
         do {
             let formatter = DateFormatter()
             formatter.dateFormat = "yyyy.MM.dd_HH:mm:ss"
+//            formatter.dateFormat = "yyyy-MM-dd_HH:mm:ss"
+//            formatter.dateFormat = "yyyy-MM-dd_HH.mm.ss"
             print(formatter.string(from: Date.now))
             let fileName = formatter.string(from: Date.now)
             
@@ -98,6 +104,8 @@ class SettingsViewController: BaseViewController {
 
             showAlertMessage(title: "백업 완료", message: "백업이 완료되었습니다.\n 백업 파일을 안전한 곳으로 내보내 주세요!") { _ in
                 self.showActivityViewController(backupFileURL: zipFilePath)
+//                self.settingsView.tableView.reloadData()
+                self.fetchBackupFiles()
             }
         } catch let error {
             showAlertMessage(title: "백업 파일 압축에 실패했습니다.")

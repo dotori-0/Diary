@@ -44,6 +44,7 @@ class RoundedButton: UIButton {
         var config = UIButton.Configuration.filled()
         config.title = title
         config.baseBackgroundColor = Constants.Color.backupButton
+        config.baseForegroundColor = Constants.Color.mainText
         
         configuration = config
     }

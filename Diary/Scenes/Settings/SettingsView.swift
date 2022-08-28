@@ -16,6 +16,7 @@ class SettingsView: BaseView {
     let cloudImageView: UIImageView = {
         let view = UIImageView()
         view.image = UIImage(systemName: "icloud.and.arrow.up")
+        view.contentMode = .scaleAspectFit
         view.backgroundColor = .systemMint
         return view
     }()
