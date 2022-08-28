@@ -8,6 +8,7 @@
 import UIKit
 
 import Zip
+import UniformTypeIdentifiers
 
 class SettingsViewController: BaseViewController {
     
@@ -119,7 +120,47 @@ class SettingsViewController: BaseViewController {
     }
     
     @objc func bringBackupFileButtonClicked() {
+        let diaryUTType = UTType("com.app.diary")!
+        let documentPicker = UIDocumentPickerViewController(forOpeningContentTypes: [diaryUTType], asCopy: true)  // 지정한 타입 재외하고 선택 비활성화 | asCopy: 가져 왔을 때 파일앱에서 파일이 날아가거나 하지 않게
+        documentPicker.delegate = self
+        documentPicker.allowsMultipleSelection = false
         
+        self.present(documentPicker, animated: true)
+        
+    }
+}
+
+
+extension SettingsViewController: UIDocumentPickerDelegate {
+    func documentPickerWasCancelled(_ controller: UIDocumentPickerViewController) {
+        print(#function)
+    }
+    
+    func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
+        // 선택한 파일의 URL
+        guard let selectedFileURL = urls.first else {  // 실패할 가능성은 적지만 가져오는 와중에 파일 앱에 들어가서 파일을 삭제한다거나 할 수 있기 때문에
+            showAlertMessage(title: "선택하신 파일을 찾을 수 없습니다.")
+            return
+        }
+        
+        guard let documentsDirectoryPath = getDocumentsDirectoryPath() else { return }
+        
+        // Sandbox-Documents에 저장할 위치 + 파일명
+        let sandboxFileURL = documentsDirectoryPath.appendingPathComponent(selectedFileURL.lastPathComponent)
+        
+        // Sandbox-Documents에 이미 있는 파일인지 확인
+        if FileManager.default.fileExists(atPath: sandboxFileURL.path) {
+            showAlertMessage(title: "이미 Diary 앱 내에 존재하는 파일입니다.")
+        } else {
+            do {
+                // 파일 앱의 백업 파일 -> 도큐먼트 폴더에 복사
+                try FileManager.default.copyItem(at: selectedFileURL, to: sandboxFileURL)
+                fetchBackupFiles()
+                showAlertMessage(title: "백업 파일을 성공적으로 가져왔습니다.")  // 👻 토스트로 바꾸기
+            } catch let error {
+                print(error)
+            }
+        }
     }
 }
 
