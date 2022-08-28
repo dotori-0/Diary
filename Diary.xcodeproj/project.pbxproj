@@ -44,6 +44,7 @@
 		0A1E73B028BA772700EAEE7F /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1E73AF28BA772700EAEE7F /* RoundedButton.swift */; };
 		0A1E73B328BA9CC700EAEE7F /* Zip in Frameworks */ = {isa = PBXBuildFile; productRef = 0A1E73B228BA9CC700EAEE7F /* Zip */; };
 		0A1E73B528BB458A00EAEE7F /* BackupFileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1E73B428BB458A00EAEE7F /* BackupFileTableViewCell.swift */; };
+		0A1E73B728BB59DF00EAEE7F /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1E73B628BB59DE00EAEE7F /* UIColor+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +112,7 @@
 		0A1E73AD28BA723000EAEE7F /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		0A1E73AF28BA772700EAEE7F /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		0A1E73B428BB458A00EAEE7F /* BackupFileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupFileTableViewCell.swift; sourceTree = "<group>"; };
+		0A1E73B628BB59DE00EAEE7F /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -284,6 +286,7 @@
 				0A1E739628B7CDDC00EAEE7F /* Alert+Extension.swift */,
 				0A1E737928B6653C00EAEE7F /* Transition+Extension.swift */,
 				0A1E739428B7CD3400EAEE7F /* FileManager+Extension.swift */,
+				0A1E73B628BB59DE00EAEE7F /* UIColor+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -413,6 +416,7 @@
 				0A1E737C28B6665100EAEE7F /* WriteView.swift in Sources */,
 				0A1E738D28B7650200EAEE7F /* UserDiary.swift in Sources */,
 				0A1E735A28B64E9300EAEE7F /* Color.swift in Sources */,
+				0A1E73B728BB59DF00EAEE7F /* UIColor+Extension.swift in Sources */,
 				0A1E735528B52CDD00EAEE7F /* DiaryImageView.swift in Sources */,
 				0A1E733028B4AE8E00EAEE7F /* BaseView.swift in Sources */,
 				0A1E734328B52BD200EAEE7F /* HomeViewController.swift in Sources */,

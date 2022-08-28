@@ -10,13 +10,15 @@ import UIKit
 import Zip
 
 class SettingsViewController: BaseViewController {
+    
+    // MARK: - Properties
+    
     let settingsView = SettingsView()
     
-    let testLabel: UILabel = {
-        let label = UILabel()
-        label.text = "설정 화면"
-        return label
-    }()
+    var backupFileNames: [String] = []
+    
+    
+    // MARK: - Functions
     
     override func loadView() {
         view = settingsView
@@ -26,27 +28,31 @@ class SettingsViewController: BaseViewController {
         super.viewDidLoad()
 
 //        title = "타이틀"  // Tab Bar Title
+        fetchBackupFiles()
     }
 
     override func setUI() {
         super.setUI()
         print(self, #function)
+        
         settingsView.navigationBar.delegate = self
-        settingsView.addSubview(testLabel)
         settingsView.tableView.dataSource = self
         settingsView.tableView.delegate = self
         settingsView.tableView.register(BackupFileTableViewCell.self, forCellReuseIdentifier: BackupFileTableViewCell.reuseIdentifier)
     }
     
     override func setConstraints() {
-        testLabel.snp.makeConstraints { make in
-            make.centerX.centerY.equalToSuperview()
-        }
     }
     
     override func setActions() {
         settingsView.backupButton.addTarget(self, action: #selector(backupButtonClicked), for: .touchUpInside)
         settingsView.bringBackupFileButton.addTarget(self, action: #selector(bringBackupFileButtonClicked), for: .touchUpInside)
+    }
+    
+    func fetchBackupFiles() {
+        if let backupFileNames = fetchDiaryFilesFromDocuments() {
+            self.backupFileNames = backupFileNames
+        }
     }
     
     @objc func backupButtonClicked() {
@@ -112,7 +118,7 @@ class SettingsViewController: BaseViewController {
 
 extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        10
+        return backupFileNames.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -121,10 +127,10 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
             return UITableViewCell()
         }
         
-        fetchDiaryFilesFromDocuments()
-        
-        cell.fileNameLabel.text = "파일 이름"
+        cell.fileNameLabel.text = backupFileNames[indexPath.row]
         cell.fileSizeLabel.text = "파일 크기"
+        print(cell.fileIconImageView.frame.height)
+        print(cell.fileIconImageView.frame.width)
         
         return cell
     }

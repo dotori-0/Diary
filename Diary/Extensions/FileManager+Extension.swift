@@ -77,15 +77,15 @@ extension UIViewController {
             guard let documentDirectoryPath = getDocumentsDirectoryPath() else { return nil }
 //            let allFiles = try FileManager.default.contents(atPath: documentDirectoryPath.path)  // nil
             let allFilesURLs = try FileManager.default.contentsOfDirectory(at: documentDirectoryPath, includingPropertiesForKeys: nil)
-            print("allFiles: \(allFilesURLs)")
+//            print("allFiles: \(allFilesURLs)")
             print("allFiles.count: \(allFilesURLs.count)")
             
             let allDiaryFilesURLs = allFilesURLs.filter { $0.pathExtension == "diary" }  // pathExtension: 확장자
             let allDiaryFileNames = allDiaryFilesURLs.map { $0.lastPathComponent }
-            print("allDiaryFileNames: \(allDiaryFileNames)")
+//            print("allDiaryFileNames: \(allDiaryFileNames)")
             print("allDiaryFileNames.count: \(allDiaryFileNames.count)")
             
-            return allDiaryFileNames
+            return allDiaryFileNames.sorted().reversed()
         } catch let error {
             showAlertMessage(title: "백업 파일 찾기 오류", message: "앱 내 Documents 폴더에서 백업 파일 찾기에 실패했습니다.")
             print(error)

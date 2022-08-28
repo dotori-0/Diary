@@ -11,12 +11,15 @@ class BackupFileTableViewCell: UITableViewCell {
     let fileIconImageView: UIImageView = {
         let view = UIImageView()
         view.image = UIImage(systemName: "doc")
+        view.contentMode = .scaleAspectFit
+//        view.backgroundColor = .systemOrange
+        view.tintColor = .mainAccent
         return view
     }()
     
     let fileNameLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 14)
+        label.font = .systemFont(ofSize: 15)
         return label
     }()
     
@@ -54,18 +57,19 @@ class BackupFileTableViewCell: UITableViewCell {
     
     func setConstraints() {
         fileIconImageView.snp.makeConstraints { make in
-            make.leading.equalToSuperview().offset(20)
+            make.leading.equalToSuperview().offset(28)
             make.centerY.equalToSuperview()
-            make.height.equalToSuperview().multipliedBy(0.6)
+            make.height.equalToSuperview().multipliedBy(0.5)
             make.width.equalTo(fileIconImageView.snp.height)  // 👻 클로저인데 왜 self. 붙이지 않아도 되는지?
+            // 같게 했는데 왜 프린트하면 height는 35.0, width는 35.5가 찍히는지...
         }
         
         stackView.snp.makeConstraints { make in
-            make.leading.equalTo(fileIconImageView.snp.trailing).offset(20)
+            make.leading.equalTo(fileIconImageView.snp.trailing).offset(12)
             make.centerY.equalToSuperview()
 //            make.trailing.greaterThanOrEqualTo(contentView).offset(-20)  // 👻 왜 superview 안 되는지..?
             make.trailing.greaterThanOrEqualTo(stackView.superview!).offset(-20)  // 왜 이건 되는지
-            make.height.equalTo(contentView).multipliedBy(0.8)
+            make.height.equalTo(contentView).multipliedBy(0.6)
         }
     }
 }
