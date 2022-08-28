@@ -43,6 +43,7 @@
 		0A1E73AE28BA723100EAEE7F /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1E73AD28BA723000EAEE7F /* SettingsView.swift */; };
 		0A1E73B028BA772700EAEE7F /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1E73AF28BA772700EAEE7F /* RoundedButton.swift */; };
 		0A1E73B328BA9CC700EAEE7F /* Zip in Frameworks */ = {isa = PBXBuildFile; productRef = 0A1E73B228BA9CC700EAEE7F /* Zip */; };
+		0A1E73B528BB458A00EAEE7F /* BackupFileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1E73B428BB458A00EAEE7F /* BackupFileTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +110,7 @@
 		0A1E73AB28BA700600EAEE7F /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		0A1E73AD28BA723000EAEE7F /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		0A1E73AF28BA772700EAEE7F /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		0A1E73B428BB458A00EAEE7F /* BackupFileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupFileTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -291,6 +293,7 @@
 			children = (
 				0A1E73A628B9FFAE00EAEE7F /* SettingsViewController.swift */,
 				0A1E73AD28BA723000EAEE7F /* SettingsView.swift */,
+				0A1E73B428BB458A00EAEE7F /* BackupFileTableViewCell.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -421,6 +424,7 @@
 				0A1E73AE28BA723100EAEE7F /* SettingsView.swift in Sources */,
 				0A1E73A728B9FFAE00EAEE7F /* SettingsViewController.swift in Sources */,
 				0A1E735C28B64F5D00EAEE7F /* FontSize.swift in Sources */,
+				0A1E73B528BB458A00EAEE7F /* BackupFileTableViewCell.swift in Sources */,
 				0A1E733528B529E100EAEE7F /* BaseTableViewCell.swift in Sources */,
 				0A1E734528B52BE400EAEE7F /* HomeTableViewCell.swift in Sources */,
 				0A1E739728B7CDDC00EAEE7F /* Alert+Extension.swift in Sources */,

@@ -33,6 +33,9 @@ class SettingsViewController: BaseViewController {
         print(self, #function)
         settingsView.navigationBar.delegate = self
         settingsView.addSubview(testLabel)
+        settingsView.tableView.dataSource = self
+        settingsView.tableView.delegate = self
+        settingsView.tableView.register(BackupFileTableViewCell.self, forCellReuseIdentifier: BackupFileTableViewCell.reuseIdentifier)
     }
     
     override func setConstraints() {
@@ -50,10 +53,11 @@ class SettingsViewController: BaseViewController {
         var urlPaths = [URL]()  // 백업할 파일의 배열
         
         // 1. 도큐먼트 위치에 백업 파일이 있는지 확인
-        guard let documentsPath = getDocumentsDirectoryPath() else {
-            showAlertMessage(title: "앱 내 도큐먼트 위치에 오류가 있습니다.")
-            return
-        }
+//        guard let documentsPath = getDocumentsDirectoryPath() else {
+//            showAlertMessage(title: "앱 내 도큐먼트 위치에 오류가 있습니다.")
+//            return
+//        }
+        guard let documentsPath = getDocumentsDirectoryPath() else { return }
         
         let realmFilePath = documentsPath.appendingPathComponent("default.realm")  // 렘 파일 경로 가져오기
         
@@ -102,6 +106,27 @@ class SettingsViewController: BaseViewController {
     
     @objc func bringBackupFileButtonClicked() {
         
+    }
+}
+
+
+extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        10
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: BackupFileTableViewCell.reuseIdentifier) as? BackupFileTableViewCell else {
+            print("Cannot find BackupFileTableViewCell")
+            return UITableViewCell()
+        }
+        
+        fetchDiaryFilesFromDocuments()
+        
+        cell.fileNameLabel.text = "파일 이름"
+        cell.fileSizeLabel.text = "파일 크기"
+        
+        return cell
     }
 }
 
