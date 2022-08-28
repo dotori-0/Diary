@@ -11,7 +11,7 @@ extension UIViewController {
     func getDocumentsDirectoryPath() -> URL? {
         // Documents 경로
         guard let documentDirectoryPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
-            showAlertMessage(title: "사진을 저장할 Documents 폴더 찾기에 실패했습니다.")
+            showAlertMessage(title: "Documents 폴더 찾기에 실패했습니다.")
             return nil
         }
         

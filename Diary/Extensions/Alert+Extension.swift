@@ -8,9 +8,12 @@
 import UIKit
 
 extension UIViewController {
-    func showAlertMessage(title: String, buttonTitle: String = "확인") {
-        let alert = UIAlertController(title: title, message: nil, preferredStyle: .alert)
-        let ok = UIAlertAction(title: buttonTitle, style: .cancel)
+    func showAlertMessage(title: String, message: String? = nil, buttonTitle: String = "확인", handler: ((UIAlertAction) -> Void)? = nil) {
+        // handler: @escaping ((UIAlertAction) -> Void)?)
+        // Closure is already escaping in optional type argument
+        // Remove '@escaping ' 👻
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let ok = UIAlertAction(title: buttonTitle, style: .cancel, handler: handler)
         alert.addAction(ok)
         
         present(alert, animated: true)

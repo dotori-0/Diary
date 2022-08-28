@@ -85,6 +85,10 @@ class SettingsViewController: BaseViewController {
             })
 
             print("Archive Location: \(zipFilePath)")
+
+            showAlertMessage(title: "백업 완료", message: "백업이 완료되었습니다.\n 백업 파일을 안전한 곳으로 내보내 주세요!") { _ in
+                self.showActivityViewController(backupFileURL: zipFilePath)
+            }
         } catch let error {
             showAlertMessage(title: "백업 파일 압축에 실패했습니다.")
             print(error)
