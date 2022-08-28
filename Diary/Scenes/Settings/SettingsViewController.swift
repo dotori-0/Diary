@@ -70,7 +70,20 @@ class SettingsViewController: BaseViewController {
             let formatter = DateFormatter()
             formatter.dateFormat = "yyyy.MM.dd_HH:mm:ss"
             print(formatter.string(from: Date.now))
-            let zipFilePath = try Zip.quickZipFiles(urlPaths, fileName: formatter.string(from: Date.now))  // 👻 quickZipFiles의 progress 파라미터 써 보기
+            let fileName = formatter.string(from: Date.now)
+            
+            var isValidExtension = Zip.isValidFileExtension("diary")
+            print("isValidExtension: \(isValidExtension)")
+            Zip.addCustomFileExtension("diary")
+            isValidExtension = Zip.isValidFileExtension("diary")
+            print("isValidExtension: \(isValidExtension)")
+            
+//            let zipFilePath = try Zip.quickZipFiles(urlPaths, fileName: fileName)  // 👻 quickZipFiles의 progress 파라미터 써 보기
+            let zipFilePath = documentsPath.appendingPathComponent("\(fileName).diary")
+            try Zip.zipFiles(paths: urlPaths, zipFilePath: zipFilePath, password: nil, progress: { progress in
+                print(progress)
+            })
+
             print("Archive Location: \(zipFilePath)")
         } catch let error {
             showAlertMessage(title: "백업 파일 압축에 실패했습니다.")
@@ -78,6 +91,10 @@ class SettingsViewController: BaseViewController {
         }
     }
     
+    func showActivityViewController(backupFileURL: URL) {
+        let activityVC = UIActivityViewController(activityItems: [backupFileURL], applicationActivities: [])
+        present(activityVC, animated: true)
+    }
     
     @objc func bringBackupFileButtonClicked() {
         

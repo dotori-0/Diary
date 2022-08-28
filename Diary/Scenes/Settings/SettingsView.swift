@@ -75,8 +75,8 @@ class SettingsView: BaseView {
 //        let statusBarHeight = statusBarManager.statusBarFrame.height
 //        let statusBarHeight = view.window?.windowScene?.statusBarManager?.statusBarFrame.height
 //        print(statusBarHeight)  // nil
-        let statusBarHeight =  window?.safeAreaLayoutGuide.layoutFrame.height
-        print(statusBarHeight)  // nil
+//        let statusBarHeight =  window?.safeAreaLayoutGuide.layoutFrame.height
+//        print(statusBarHeight)  // nil
         
 //        guard view.window != nil else {
 //            print("Cannot find window")  // 여기서 Cannot find window가 찍힌다...ㅠㅠ.ㅠ
